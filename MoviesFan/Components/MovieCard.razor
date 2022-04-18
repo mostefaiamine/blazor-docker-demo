@@ -1,0 +1,18 @@
+﻿@if (Data != null)
+{
+    <div class="card movie-card" >
+        <img src="https://image.tmdb.org/t/p/w200/@Data.Poster_Path" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3>@Data.Title</h3>
+            <p class="card-text">@Data.Overview</p>
+            <strong>Release Date : </strong>@Data.Release_date
+        </div>
+    </div>
+}
+@code{
+    /// <summary>
+    /// Movie data
+    /// </summary>
+    [Parameter]
+    public  SearchResultItem? Data { get; set; }
+}

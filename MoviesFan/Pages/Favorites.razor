@@ -1,0 +1,40 @@
+﻿@page "/fav"
+@if (Loading)
+{
+
+    <Loading></Loading>
+}
+else
+{
+    @if (Error)
+    {
+        <ErrorDisplay></ErrorDisplay>
+    }
+    else
+    {
+        if (Movies != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var m in Movies)
+                    {
+                        <tr>
+                            <td>@m.Id</td>
+                            <td>@m.Title</td>
+                            <td>@m.Year</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+}
+
+

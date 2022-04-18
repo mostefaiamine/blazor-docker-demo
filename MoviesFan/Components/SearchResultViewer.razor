@@ -1,0 +1,25 @@
+﻿@if (Data != null)
+{
+   
+    <div class="row">
+        @if (Data.Results != null)
+        {
+            foreach (var movie in Data.Results)
+            {
+                <div class="col-3">
+                    <MovieCard Data="movie"></MovieCard>
+                </div>
+            }
+        }
+    </div>
+    
+}
+
+@code {
+    /// <summary>
+    /// Search result
+    /// </summary>
+    [Parameter]
+    public SearchResult? Data { get; set; }
+
+}

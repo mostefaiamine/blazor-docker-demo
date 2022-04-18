@@ -1,0 +1,7 @@
+﻿.error-view{
+    background-color: white;
+    border: 2px solid;
+    border-left-width: 20px;
+    border-color: var(--red);
+    padding: 5px 15px;
+}

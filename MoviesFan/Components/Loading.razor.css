@@ -1,0 +1,7 @@
+﻿.loading{
+    text-align: center;
+}
+
+.loading span{
+    display: block;
+}

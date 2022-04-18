@@ -1,0 +1,52 @@
+﻿@page "/find"
+<h3>Find Movies</h3>
+
+<form class="row g-3 find-form">
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Find</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Please entrer the query text" @bind="QueryText" @bind:event="oninput">
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn btn-primary" @onclick="()=>Search(1)" disabled="@(!CanSearch)">Find now</button>
+    </div>
+</form>
+@if (Loading)
+{
+
+    <Loading></Loading>
+}
+else
+{
+    @if (Error)
+    {
+        <ErrorDisplay></ErrorDisplay>
+    }
+    else
+    {
+        if (Results != null)
+        {
+            <div class="row">
+                <div class="col-12">
+                    <strong>Total results : </strong>@Results.Total_results. Page @Results.Page of @Results.Total_Pages
+                </div>
+            </div>
+            <SearchResultViewer Data="Results"></SearchResultViewer>
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item @(Results.Page == 1 ? "disabled":"")">
+                                <a class="page-link" @onclick="()=>Search(Results.Page-1)">Previous</a>
+                            </li>
+                            <li class="page-item @(Results.Page == Results.Total_Pages ? "disabled":"")">
+                                <a class="page-link" @onclick="()=>Search(Results.Page+1)">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        }
+    }
+}
+
+

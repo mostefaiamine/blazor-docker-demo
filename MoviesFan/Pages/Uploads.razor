@@ -1,0 +1,23 @@
+﻿@page "/uploads"
+
+@if (Uploaded != null)
+{
+    <div class="row upload-form">
+        <div class="col-12">
+            <p>Please upload your favorite movie picturss</p>
+        </div>
+        <div class="col-12">
+        <InputFile class="form-control" OnChange="@UploadFile"/>
+        </div>
+    </div>
+    <div class="row">
+        
+        @foreach (var file in Uploaded)
+        {
+            <div class="col-4">
+                <img src="@file" class="img-fluid"/>
+            </div>
+        }
+       
+    </div>
+}

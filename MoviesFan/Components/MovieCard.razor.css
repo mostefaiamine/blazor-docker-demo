@@ -1,0 +1,18 @@
+﻿div.movie-card {    
+    margin-top: 10px;
+    height: 98%;
+    background-color: white;
+}
+
+    div.movie-card img {
+        height: 250px;
+    }
+
+    div.movie-card p {
+        overflow: hidden;
+    }
+
+    div.movie-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
