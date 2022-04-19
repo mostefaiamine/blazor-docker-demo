@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: docker.pkg.github.com/${{ github.repository }}/ghost
+  IMAGE_NAME: mostefaiamine/moviesfan
 
 jobs:
   push:
