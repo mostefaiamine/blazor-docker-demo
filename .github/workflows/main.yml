@@ -14,6 +14,8 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
+      - name: Debug
+        run: echo "${{ secrets.HUB_TOKEN }}"
       - name: Build image
         run: docker build . --file ./MoviesFan/Dockerfile --tag $IMAGE_NAME:${{ github.run_number }}
       - name: Log into registry
